@@ -1,5 +1,6 @@
 #include <iostream>
 #include <iomanip>
+#include <windows.h>
 #include <vector>
 using namespace std;
 
@@ -55,7 +56,10 @@ int main()
 		cin >> x >> y >> num;
 
 		if (x > 9 || x < 1 || y > 9 || y < 1 || sudoku[x][y] != 0 || num < 0 || num > 9)
+		{
 			cout << "Error!!" << endl;
+			Sleep(1000);
+		}
 		else
 			sudoku[x - 1][y - 1] = num;
 
