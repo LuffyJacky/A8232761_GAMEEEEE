@@ -59,10 +59,15 @@ int main()
 		{
 			cout << "Error!!" << endl;
 			Sleep(1000);
-		}
+			system("cls");
+		}			
 		else
+		{
 			sudoku[x - 1][y - 1] = num;
+			Sleep(1000);
+			system("cls");
+		}
 
-		system("cls");
+		
 	}
 }
