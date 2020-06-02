@@ -181,7 +181,7 @@ public:
 		for (int i = 0; i < 9; i++)
 		{
 			t = true;
-			if (point[x][i] == z || point[x][i] == point[x][y])
+			if (point[x][i] == z)
 			{
 				t = false;
 				break;
@@ -196,7 +196,7 @@ public:
 		for (int i = 0; i < 9; i++)
 		{
 			g = true;
-			if (point[i][y] == z || point[i][y] == point[x][y])
+			if (point[i][y] == z)
 			{
 				g = false;
 				break;
@@ -211,18 +211,19 @@ class output : public check
 public:
 	void final_result()
 	{
-		if (column() && row() && the_4_cube())
+		if(point[x][y] == 0)
 		{
-			point[x][y] = z;
-		}
-		else if(z == 0)
-		{
-			point[x][y] = z;
+			if (column() && row() && the_4_cube())
+			{
+				point[x][y] = z;
+			}
+			else if(z == 0)
+			{
+				point[x][y] = z;
+			}
 		}
 		else
-		{
-			cout << "這個位置不可填此數字" << endl;
-		}
+				cout << "這個位置不可填此數字" << endl;
 	}
 
 	void display()
